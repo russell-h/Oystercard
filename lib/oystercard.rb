@@ -10,8 +10,11 @@ class Oystercard
 
   def top_up(value)
       fail "maximum limit reached #{MAXIMUM_VALUE}" if limit? 
-      @balance = @balance + value
-    
+      @balance += value
+  end
+
+  def deduct(value)
+    @balance -= value
   end
 
   def limit?
